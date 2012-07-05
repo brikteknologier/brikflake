@@ -1,0 +1,22 @@
+mixin brikflake
+  svg.brikflake(xmlns="http://www.w3.org/2000/svg",
+                version="1.1",
+                viewBox="0 0 91 87"
+                preserveAspectRatio="none")
+    - function createHexagonPoints(x, y) {
+    -   var pair = function(x, y) { return x + "," + y; }
+    -   var pairs = [];
+    -   pairs.push(pair(     x,      y));
+    -   pairs.push(pair(x - 13, y + 8 ));
+    -   pairs.push(pair(x - 13, y + 23)); 
+    -   pairs.push(pair(     x, y + 31));
+    -   pairs.push(pair(x + 13, y + 23)); 
+    -   pairs.push(pair(x + 13, y + 8 ));
+    -   return pairs.join(' ');
+    - }
+    polygon(points=createHexagonPoints(29,  0))
+    polygon(points=createHexagonPoints(13, 28))
+    polygon(points=createHexagonPoints(29, 56))
+    polygon(points=createHexagonPoints(61, 56))
+    polygon(points=createHexagonPoints(77, 28))
+    polygon(points=createHexagonPoints(61,  0))
